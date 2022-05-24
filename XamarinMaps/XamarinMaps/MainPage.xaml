@@ -3,6 +3,32 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamarinMaps.MainPage"
              xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps">
-             <maps:Map x:Name="MyMap" IsShowingUser="True" />
+
+    <StackLayout>
+        <StackLayout BackgroundColor="LightGray" Padding="10">
+            <Label x:Name="datetimelbl" Text="DateTime"/>
+            <Entry x:Name="cityEnterEntry" Placeholder="City" BackgroundColor="LightGray"/>
+            <StackLayout Orientation="Horizontal" Spacing="20">
+                <StackLayout>
+                    <Label x:Name="tempLbl" Text="Temp"/>
+                    <Label x:Name="feelLikeLbl" Text="GTemp"/>
+                </StackLayout>
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Image/>
+                        <Label x:Name="WindLbl" Text="Wind"/>
+                    </StackLayout>
+                    <Label x:Name="HumidityLbl" Text="Humidity"/>
+                    <Label x:Name="PressureLbl" Text="Pressure"/>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+
+        <Button x:Name="btnUpdate" Text="Обновить погоду" Clicked="btnUpdate_Clicked" ></Button>
+
+        <StackLayout>
+            <maps:Map x:Name="MyMap" IsShowingUser="True" HeightRequest="400"/>
+        </StackLayout>
+    </StackLayout>
     
 </ContentPage>
